@@ -39,9 +39,9 @@ Este projeto oferece um sistema de reconhecimento facial utilizando um modelo pr
        recognizer.recognize_from_camera()
 
 # Classe FaceRecognition
-   A classe FaceRecognition fornece métodos para processar imagens, extrair embeddings faciais e gerenciar um banco de dados de embeddings.
-   Inicialização
-    ```python
+A classe FaceRecognition fornece métodos para processar imagens, extrair embeddings faciais e gerenciar um banco de dados de embeddings.
+Inicialização
+```python
       from facerecognition import FaceRecognition
       
       model_path = 'caminho/para/inceptionresnetv1_weights.h5'
