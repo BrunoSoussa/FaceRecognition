@@ -20,18 +20,17 @@ This project provides a system for facial recognition using a pre-trained Incept
    ```python
       git clone https://github.com/yourusername/facerecognition.git
       cd facerecognition
-   ´´´
 2. **Instalar os pacotes necessários**
    ```sh
    pip install numpy tensorflow opencv-python pillow matplotlib
-   ´´´
+
 
 
 4. **Uso**
    # Classe FaceRecognition
    A classe FaceRecognition fornece métodos para processar imagens, extrair embeddings faciais e gerenciar um banco de dados de embeddings.
    Inicialização
-   ´´´ python
+   ´´´python
       from facerecognition import FaceRecognition
       
       model_path = 'caminho/para/inceptionresnetv1_weights.h5'
