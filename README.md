@@ -20,88 +20,87 @@ This project provides a system for facial recognition using a pre-trained Incept
    ```sh
    git clone https://github.com/yourusername/facerecognition.git
    cd facerecognition
-   Install the required packages:
-   
-   sh
-   
-   pip install numpy tensorflow opencv-python pillow matplotlib
-   Download the InceptionResNetV1 weights and place them in the model directory.
-   
-   Usage
-   FaceRecognition Class
-   The FaceRecognition class provides methods for processing images, extracting facial embeddings, and managing an embeddings database.
+2. **Instalar os pacotes necessários**
+   'pip install numpy tensorflow opencv-python pillow matplotlib'
 
-Initialization
+
+3. **Uso**
+   '# Classe FaceRecognition'
+   'A classe FaceRecognition fornece métodos para processar imagens, extrair embeddings faciais e gerenciar um banco de dados de embeddings.'
+
+Inicialização
 python
 from facerecognition import FaceRecognition
 
-model_path = 'path/to/inceptionresnetv1_weights.h5'
+model_path = 'caminho/para/inceptionresnetv1_weights.h5'
 recognition = FaceRecognition(model_path)
-Add a Face to the Database
-python
-recognition.add_to_db('path/to/image.jpg', 'Person Name')
-Find a Face in the Database
-python
-Copiar código
-result = recognition.find_in_db('path/to/image.jpg')
-print(result)
-RealTimeFaceRecognition Class
-The RealTimeFaceRecognition class extends FaceRecognition to provide real-time face recognition using a webcam.
 
-Initialization
+Adicionar um Rosto ao Banco de Dados
 python
+recognition.add_to_db('caminho/para/imagem.jpg', 'Nome da Pessoa')
+
+Encontrar um Rosto no Banco de Dados
+python
+result = recognition.find_in_db('caminho/para/imagem.jpg')
+print(result)
+
+Classe RealTimeFaceRecognition
+A classe RealTimeFaceRecognition estende FaceRecognition para fornecer reconhecimento facial em tempo real usando uma webcam.
+
+Inicialização
 from facerecognition import RealTimeFaceRecognition
 
-model_path = 'path/to/inceptionresnetv1_weights.h5'
+model_path = 'caminho/para/inceptionresnetv1_weights.h5
 real_time_recognition = RealTimeFaceRecognition(model_path)
-Recognize Faces from Webcam
-python
+
+Reconhecer Rostos da Webcam
 real_time_recognition.recognize_from_camera()
-Press q to quit the real-time recognition.
 
-Detailed Method Descriptions
-FaceRecognition Class
-__init__(self, model_path: str)
+Pressione q para sair do reconhecimento em tempo real.
 
-Initializes the model and loads the embeddings database.
-_load_image(filename: str) -> np.ndarray
+Descrições Detalhadas dos Métodos
 
-Loads an image from a file and converts it to a NumPy array.
-_extract_face(image: np.ndarray, required_size: Tuple[int, int] = (160, 160)) -> Optional[np.ndarray]
+Classe FaceRecognition
 
-Detects and extracts the first face from an image, resizing it to the required size.
-_get_embedding(face_pixels: np.ndarray) -> np.ndarray
+- __init__(self, model_path: str)
+  - Inicializa o modelo e carrega o banco de dados de embeddings.
 
-Generates an embedding for a face using the InceptionResNetV1 model.
-_process_image(filepath: str) -> Tuple[Optional[np.ndarray], Optional[np.ndarray]]
+- _load_image(filename: str) -> np.ndarray
+  - Carrega uma imagem de um arquivo e converte para um array NumPy.
 
-Processes an image to extract a face and generate its embedding.
-_plot_face(face_array: np.ndarray) -> None
+- _extract_face(image: np.ndarray, required_size: Tuple[int, int] = (160, 160)) -> Optional[np.ndarray]
+  - Detecta e extrai o primeiro rosto de uma imagem, redimensionando para o tamanho necessário.
 
-Plots a face image using Matplotlib.
-_calculate_cosine_similarity(embedding1: np.ndarray, embedding2: np.ndarray) -> float
+- _get_embedding(face_pixels: np.ndarray) -> np.ndarray
+  - Gera um embedding para um rosto usando o modelo InceptionResNetV1.
 
-Calculates the cosine similarity between two embeddings.
-add_to_db(self, image_path: str, name: str) -> None
+- _process_image(filepath: str) -> Tuple[Optional[np.ndarray], Optional[np.ndarray]]
+  - Processa uma imagem para extrair um rosto e gerar seu embedding.
 
-Adds a face and its embedding to the database.
-find_in_db(self, image_path: str, threshold: float = 0.5) -> Optional[str]
+- _plot_face(face_array: np.ndarray) -> None
+  - Plota uma imagem de rosto usando Matplotlib.
 
-Finds the best match for a face in the database based on cosine similarity.
-_save_db(self, filename: str = 'embeddings_db.json') -> None
+- _calculate_cosine_similarity(embedding1: np.ndarray, embedding2: np.ndarray) -> float
+  - Calcula a similaridade cosseno entre dois embeddings.
 
-Saves the embeddings database to a JSON file.
-_load_db(self, filename: str = 'embeddings_db.json') -> List[dict]
+- add_to_db(self, image_path: str, name: str) -> None
+  - Adiciona um rosto e seu embedding ao banco de dados.
 
-Loads the embeddings database from a JSON file.
-RealTimeFaceRecognition Class
-__init__(self, model_path: str)
+- find_in_db(self, image_path: str, threshold: float = 0.5) -> Optional[str]
+  - Encontra a melhor correspondência para um rosto no banco de dados com base na similaridade cosseno.
 
-Initializes the model and loads the embeddings database, inheriting from FaceRecognition.
-recognize_from_camera(self, threshold: float = 0.5) -> None
+- _save_db(self, filename: str = 'embeddings_db.json') -> None
+  - Salva o banco de dados de embeddings em um arquivo JSON.
 
-Captures frames from a webcam and performs real-time face recognition, displaying results on the screen.
-Notes
-Ensure that the InceptionResNetV1 weights are correctly downloaded and the path is properly set.
-Adjust the threshold parameter in find_in_db and recognize_from_camera to fine-tune the matching sensitivity.
-For real-time recognition, ensure that the webcam is properly connected and configured.
+- _load_db(self, filename: str = 'embeddings_db.json') -> List[dict]
+  - Carrega o banco de dados de embeddings de um arquivo JSON.
+
+Classe RealTimeFaceRecognition
+
+- __init__(self, model_path: str)
+  - Inicializa o modelo e carrega o banco de dados de embeddings, herdando de FaceRecognition.
+
+- recognize_from_camera(self, threshold: float = 0.5) -> None
+  - Captura frames de uma webcam e realiza reconhecimento facial em tempo real, exibindo os resultados na tela.
+
+
