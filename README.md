@@ -1,10 +1,10 @@
-# Face Recognition System
+# Sistema de Reconhecimento Facial
 
-## Overview
+## Visão Geral
 
-This project provides a system for facial recognition using a pre-trained InceptionResNetV1 model. It includes functionality for adding new faces to a database, finding matches in the database for a given image, and real-time face recognition using a webcam.
+Este projeto oferece um sistema de reconhecimento facial utilizando um modelo pré-treinado InceptionResNetV1. Ele inclui funcionalidades para adicionar novos rostos a um banco de dados, encontrar correspondências no banco de dados para uma imagem fornecida e reconhecimento facial em tempo real usando uma webcam.
 
-## Dependencies
+## Dependencias
 
 - Python 3.x
 - TensorFlow
@@ -14,9 +14,9 @@ This project provides a system for facial recognition using a pre-trained Incept
 - Matplotlib
 - JSON
 
-## Installation
+## Instalção
 
-1. **Clone the repository:**
+1. **Clone o repositório:**
    ```python
       git clone https://github.com/yourusername/facerecognition.git
       cd facerecognition
@@ -27,7 +27,23 @@ This project provides a system for facial recognition using a pre-trained Incept
 
 
 4. **Uso**
-   # Classe FaceRecognition
+   ```python
+   from model.prediction import RealTimeFaceRecognition
+   
+   if __name__ == "__main__":
+       '''
+       Adicionar ao banco de dados
+       recognizer.add_to_db("exemplo.jpeg", "Nome Exemplo")
+       
+       '''
+       recognizer = RealTimeFaceRecognition(model_path=r"model/keras/facenet_keras.h5")
+       
+       # Adicionar ao banco de dados
+       # recognizer.add_to_db("Arthur dos Santos Veras Bringel.jpeg", "Arthur dos Santos Veras Bringel")
+   
+       recognizer.recognize_from_camera()
+
+# Classe FaceRecognition
    A classe FaceRecognition fornece métodos para processar imagens, extrair embeddings faciais e gerenciar um banco de dados de embeddings.
    Inicialização
     ```python
