@@ -17,7 +17,7 @@ This project provides a system for facial recognition using a pre-trained Incept
 ## Installation
 
 1. **Clone the repository:**
-   ```sh
+   ```python
       git clone https://github.com/yourusername/facerecognition.git
       cd facerecognition
 2. **Instalar os pacotes necessários**
