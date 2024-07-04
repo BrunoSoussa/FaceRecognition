@@ -39,32 +39,3 @@ Este projeto oferece um sistema de reconhecimento facial utilizando um modelo pr
        recognizer.recognize_from_camera()
    
 
-# Classe FaceRecognition
-A classe FaceRecognition fornece métodos para processar imagens, extrair embeddings faciais e gerenciar um banco de dados de embeddings.
-Inicialização
-```python
-         from facerecognition import FaceRecognition
-         
-         model_path = 'caminho/para/inceptionresnetv1_weights.h5'
-         recognition = FaceRecognition(model_path)
-         
-         # Adicionar um Rosto ao Banco de Dados
-         recognition.add_to_db('caminho/para/imagem.jpg', 'Nome da Pessoa')
-         
-         # Encontrar um Rosto no Banco de Dados
-         result = recognition.find_in_db('caminho/para/imagem.jpg')
-         print(result)
-
-         # Classe RealTimeFaceRecognition
-
-         # A classe RealTimeFaceRecognition estende FaceRecognition para fornecer reconhecimento facial em tempo real usando uma webcam.
-         
-         # Inicialização
-         from facerecognition import RealTimeFaceRecognition
-         
-         model_path = 'caminho/para/inceptionresnetv1_weights.h5
-         real_time_recognition = RealTimeFaceRecognition(model_path)
-         
-         # Reconhecer Rostos da Webcam
-         real_time_recognition.recognize_from_camera()
-   
