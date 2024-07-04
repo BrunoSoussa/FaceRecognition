@@ -37,6 +37,7 @@ Este projeto oferece um sistema de reconhecimento facial utilizando um modelo pr
        
        recognizer = RealTimeFaceRecognition(model_path=r"model/keras/facenet_keras.h5")
        recognizer.recognize_from_camera()
+   ´´´
 
 # Classe FaceRecognition
 A classe FaceRecognition fornece métodos para processar imagens, extrair embeddings faciais e gerenciar um banco de dados de embeddings.
@@ -53,6 +54,7 @@ Inicialização
       # Encontrar um Rosto no Banco de Dados
       result = recognition.find_in_db('caminho/para/imagem.jpg')
       print(result)
+´´´
   
 
 # Classe RealTimeFaceRecognition
@@ -67,5 +69,5 @@ Inicialização
    
    # Reconhecer Rostos da Webcam
    real_time_recognition.recognize_from_camera()
-
+´´´
 
