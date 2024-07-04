@@ -20,16 +20,16 @@ This project provides a system for facial recognition using a pre-trained Incept
    ```sh
    git clone https://github.com/yourusername/facerecognition.git
    cd facerecognition
-Install the required packages:
-
-sh
-
-pip install numpy tensorflow opencv-python pillow matplotlib
-Download the InceptionResNetV1 weights and place them in the model directory.
-
-Usage
-FaceRecognition Class
-The FaceRecognition class provides methods for processing images, extracting facial embeddings, and managing an embeddings database.
+   Install the required packages:
+   
+   sh
+   
+   pip install numpy tensorflow opencv-python pillow matplotlib
+   Download the InceptionResNetV1 weights and place them in the model directory.
+   
+   Usage
+   FaceRecognition Class
+   The FaceRecognition class provides methods for processing images, extracting facial embeddings, and managing an embeddings database.
 
 Initialization
 python
