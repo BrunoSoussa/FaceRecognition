@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Este projeto oferece um sistema de reconhecimento facial utilizando um modelo pré-treinado InceptionResNetV1. Ele inclui funcionalidades para adicionar novos rostos a um banco de dados, encontrar correspondências no banco de dados para uma imagem fornecida e reconhecimento facial em tempo real usando uma webcam.
+Este projeto oferece um sistema de reconhecimento facial utilizando um modelo pré-treinado Facenet. Ele inclui funcionalidades para adicionar novos rostos a um banco de dados, encontrar correspondências no banco de dados para uma imagem fornecida e reconhecimento facial em tempo real usando uma webcam.
 
 ## Dependencias
 
