@@ -18,7 +18,7 @@ Este projeto oferece um sistema de reconhecimento facial utilizando um modelo pr
 
 1. **Clone o repositório:**
    ```python
-      git clone https://github.com/yourusername/facerecognition.git
+      git clone https://github.com/BrunoSoussa/FaceRecognition.git
       cd facerecognition
 2. **Instalar os pacotes necessários**
    ```sh
