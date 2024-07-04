@@ -31,16 +31,11 @@ Este projeto oferece um sistema de reconhecimento facial utilizando um modelo pr
    from model.prediction import RealTimeFaceRecognition
    
    if __name__ == "__main__":
-       '''
-       Adicionar ao banco de dados
+
+       # Adicionar ao banco de dados exemplo 
        recognizer.add_to_db("exemplo.jpeg", "Nome Exemplo")
        
-       '''
        recognizer = RealTimeFaceRecognition(model_path=r"model/keras/facenet_keras.h5")
-       
-       # Adicionar ao banco de dados
-       # recognizer.add_to_db("Arthur dos Santos Veras Bringel.jpeg", "Arthur dos Santos Veras Bringel")
-   
        recognizer.recognize_from_camera()
 
 # Classe FaceRecognition
