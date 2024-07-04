@@ -30,7 +30,7 @@ This project provides a system for facial recognition using a pre-trained Incept
    # Classe FaceRecognition
    A classe FaceRecognition fornece métodos para processar imagens, extrair embeddings faciais e gerenciar um banco de dados de embeddings.
    Inicialização
-   ´´´python
+    ```python
       from facerecognition import FaceRecognition
       
       model_path = 'caminho/para/inceptionresnetv1_weights.h5'
@@ -44,7 +44,7 @@ This project provides a system for facial recognition using a pre-trained Incept
       python
       result = recognition.find_in_db('caminho/para/imagem.jpg')
       print(result)
-   ´´´
+  
 
 Classe RealTimeFaceRecognition
 A classe RealTimeFaceRecognition estende FaceRecognition para fornecer reconhecimento facial em tempo real usando uma webcam.
