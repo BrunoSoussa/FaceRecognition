@@ -17,8 +17,8 @@ This project provides a system for facial recognition using a pre-trained Incept
 ## Installation
 
 1. **Clone the repository:**
-   ''' git clone https://github.com/yourusername/facerecognition.git
-      cd facerecognition '''
+   ´´´ sh git clone https://github.com/yourusername/facerecognition.git
+      cd facerecognition ´´´
 2. **Instalar os pacotes necessários**
    pip install numpy tensorflow opencv-python pillow matplotlib
 
